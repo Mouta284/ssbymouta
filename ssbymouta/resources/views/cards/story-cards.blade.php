@@ -7,7 +7,7 @@
                 <div class="card-body">
                     <h4 class="card-title">{{ $story->title }}</h4>
                     <p class="card-text">{{ $story->subtitle }}</p>
-                    <a class="btn btn-dark w-100" href="{{ route('show.story', ['id' => $story->id]) }}">Read</a>
+                    <a class="btn btn-dark w-100" href="{{ route('story.show', ['id' => $story->id]) }}">Read</a>
                 </div>
             </div>
         @endforeach

@@ -17,7 +17,8 @@ class User extends Authenticatable
         'username',
         'name',
         'email',
-        'password'
+        'password',
+        'is_admin'
     ];
 
     public function author(): HasOne{

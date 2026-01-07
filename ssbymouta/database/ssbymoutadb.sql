@@ -10,7 +10,8 @@ CREATE TABLE users(
     username VARCHAR(100) UNIQUE NOT NULL,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL /*this password will be encrypted before enter the database*/
+    password VARCHAR(255) NOT NULL, /*this password will be encrypted before enter the database*/
+    is_admin BOOLEAN DEFAULT false
 );
 
 CREATE TABLE author(
@@ -25,14 +26,14 @@ CREATE TABLE story (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     author_id INT REFERENCES author(author_id) ON DELETE CASCADE,
     title VARCHAR(100) UNIQUE NOT NULL,
-    subtitle VARCHAR(100),
+    subtitle VARCHAR(100) NOT NULL,
     content TEXT NOT NULL,
     rating FLOAT DEFAULT 0.0 CHECK (rating >= 0.0 AND rating <= 10.0),
     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO users (username, name, email, password) VALUES
-('franciscomouta', 'Francisco Mouta', 'francisco28mouta@gmail.com', '$2a$15$.zklhn5xGJ3/LbQghfoU0uubZdcwPDSys4FC4EFVmGDjTHhDGpquO');
+INSERT INTO users (username, name, email, password, is_admin) VALUES
+('franciscomouta', 'Francisco Mouta', 'francisco28mouta@gmail.com', '$2y$12$ijseKyZaFvGpujzZKMqkReymG9ICkeu8WF/ptEBfaU3Q7VxEjUrSm', true);
 
 INSERT INTO author(author_id, author_name, author_username, email) VALUES
 (1, 'mouta', 'franciscomouta', 'francisco28mouta@gmail.com');

@@ -4,20 +4,28 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ config('app.name', 'Short-Stories by mouta') }}</title>
+        <title>{{ config('app.name', 'default') }}</title>
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     </head>
-    <body>
+    <body class="d-flex flex-column min-vh-100">
         <header>
             @include('statics.header')
         </header>
         <hr class="m-0">
 
-        <main class="vh-100">
+        <main class=" flex-grow-1">
+            <!-- Authentication forms -->
+            @yield('login-form')
+            @yield('register-form')
+            <!-- Submission form -->
+            @yield('story-upload')
+            <!-- Main content -->
             @yield('story-cards')
             @yield('story-content')
+            <!-- Profile content -->
+            @yield('profile-content')
         </main>
 
         @include('statics.footer')
