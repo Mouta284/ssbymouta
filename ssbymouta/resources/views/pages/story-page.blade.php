@@ -8,7 +8,7 @@
         <header class="card-header m-2">
             <h1>{{$story->title}}</h1>
             <h2>{{ $story->subtitle }}</h2>
-            <p class="opacity-50">by {{ $story->author->author_username }}</p>
+            <p class="opacity-50">by {{ $story->author->username }}</p>
         </header>
 
         <p class=" mx-lg-5 p-4 text-body text-start" style="white-space: pre-line">{{ $story->content }}</p>

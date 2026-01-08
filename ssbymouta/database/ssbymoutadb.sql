@@ -24,7 +24,7 @@ CREATE TABLE author(
 
 CREATE TABLE story (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    author_id INT REFERENCES author(author_id) ON DELETE CASCADE,
+    author_id INT REFERENCES users(id) ON DELETE CASCADE,
     title VARCHAR(100) UNIQUE NOT NULL,
     subtitle VARCHAR(100) NOT NULL,
     content TEXT NOT NULL,

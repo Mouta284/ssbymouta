@@ -23,6 +23,6 @@ class Story extends Model
     ];
 
     public function author(): BelongsTo{
-        return $this->belongsTo(Author::class, 'author_id', 'author_id');
+        return $this->belongsTo(User::class, 'author_id', 'id');
     }
 }

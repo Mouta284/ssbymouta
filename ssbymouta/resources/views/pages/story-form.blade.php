@@ -2,12 +2,6 @@
 
 @section('story-upload')
 
-@session('success')
-    <div class="alert alert-success">
-        {{ $message }}
-    </div>
-@endsession
-
 <div class="d-flex justify-content-center align-items-center m-5">
     <div class="card shadow-sm w-50">
         <h4 class="m-2 text-center">Story</h4>
